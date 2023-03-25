@@ -1,0 +1,1 @@
+photoshop_python_api==0.21.1

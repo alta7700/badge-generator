@@ -53,7 +53,7 @@ def main(lines: list[int], results_dir: Path, csv: Path):
     with open(csv, 'r', encoding='utf-8') as studs:
         studs.readline()  # read header
         for stud in studs:
-            course, group, *fio_lines = (x for x in stud.strip('\n').split(';') if x)
+            user_id, course, group, *fio_lines = (x for x in stud.strip('\n').split(';') if x)
             if len(fio_lines) not in lines:
                 continue
             for layer in doc.artLayers:
@@ -65,7 +65,7 @@ def main(lines: list[int], results_dir: Path, csv: Path):
                             layer.textItem.contents = group
             fill_fio_layers(fio_lines)
 
-            png_file = results_dir / f'к{course} гр{group} {" ".join(fio_lines)}.png'
+            png_file = results_dir / f'{user_id}.png'
             doc.saveAs(png_file.as_posix(), ps.PNGSaveOptions(), asCopy=True)
             print(png_file.name)
 
