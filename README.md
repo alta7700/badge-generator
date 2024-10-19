@@ -1,10 +1,13 @@
 # Для запуска необходимо:
-1) открыть в photoshop и исправить файл example.psd
-2) создать .csv по примеру из example_studs.csv
+1) Открыть в photoshop
+2) Открыть в нем файл example.psd
+3) Cоздать studs.csv по примеру из example_studs.csv
+4) Запустить программу
 
-### Дефолтная папка для результатов - results (параметр --results-dir)
-
-### Дефолтный .csv - stud.csv (параметр --csv)
-
-### Запрос для выгрузки csv
-docker compose exec -it pg psql -U postgres -d Reports -c "COPY (SELECT id, course_n, group_n, surname, name, f_name, is_foreigner FROM reports_student) TO STDOUT WITH CSV HEADER" > stud_for_badges.csv
+# Запуск на windows
+```
+python -m venv venv
+venv/Scripts/activate
+pip install -r requitements.txt
+python main.py
+```
