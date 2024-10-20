@@ -4,10 +4,13 @@
 3) Cоздать studs.csv по примеру из example_studs.csv
 4) Запустить программу
 
-# Запуск на windows
-```
+# Установка зависимостей на windows
+```shell
 python -m venv venv
-venv/Scripts/activate
-pip install -r requitements.txt
-python main.py
+venv/Scripts/pip install -r requirements.txt
+```
+
+# Запуск
+```shell
+venv/Scripts/python main.py
 ```
